@@ -1,7 +1,7 @@
 from socket import *
 
 def send():
-    c.send(b'HTTP/1.1 404 Not Found\r\n')
+    c.send(b'HTTP/1.1 200 OK\r\n')
     str='Content-Type: ' + mimeType + '\r\n'
     c.send(str.encode())
     c.send(b'\r\n')
@@ -51,7 +51,6 @@ while True:
 
         
     else:
-        print('404')
         c.send(b'HTTP/1.1 404 Not Found\r\n')
         c.send(b'\r\n')
         c.send(b'<HTML><HEAD><TITLE>Not Found</TITLE></HEAD>')
